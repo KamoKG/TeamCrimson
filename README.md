@@ -2,15 +2,15 @@
 Github Repository for Team Crimson
 
 ### Team Members
-* **Adams Darren**  
+* **Darren Adams**  
   * 14256232
-* **Jones Keanan** 
+* **Keanan Jones** 
  * 13036892
-* **Makaleng Lesego** 
+* **Lesego Makaleng** 
   * 15175716
-* **Olwage Dedre** 
+* **Dedre Olwage** 
   * 15015239
-* **Tsipa Kamogelo** 
+* **Kamogelo Tsipa** 
   * 13010931
-* **van der Walt John-Latham** 
+* **John-Latham van der Walt** 
   * N/A
