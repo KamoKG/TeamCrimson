@@ -12,5 +12,3 @@ Github Repository for Team Crimson
   * 15015239
 * **Kamogelo Tsipa** 
   * 13010931
-* **John-Latham van der Walt** 
-  * N/A
