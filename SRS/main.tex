@@ -18,18 +18,57 @@
 		\end{flushleft}
     \subsection{Scope}
 		\begin{flushleft}
-			The system(product) to be developed is called NavUP. NavUP will serve as a navigation application. NavUP intends to provide different users with optimal routes to destinations accross the University of Pretoria campus.
+			The system(product) to be developed is called NavUP. NavUP will serve as a navigation application. NavUP intends to provide different users with optimal routes to destinations across the University of Pretoria campus.
+			
+			Furthermore NavUP provides a way saving and searching locations, both indoors and outdoors. NavUP will also facilitate search-ability of POIs and events. The Wi-Fi infrastructure within campus will be used for administering location and navigation services.
 		\end{flushleft}
     \subsection{Definitions, Acronyms and Abbreviations}
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            Term & Definition \\
+            \hline
+            POI & Point of Interest \\
+            \hline
+            Wi-Fi & Wireless network infrastructure \\
+            \hline
+            Developer & Person/s developing the system. COS301 Software Engineers
+            \\
+            \hline
+            \end{tabular}
+        \end{table}
     \subsection{Overview}
 		\begin{flushleft}
-			In this document, an Overall Description will be provided for the NavUP system(product). In the Overall Description, the Product Perspective, Product Functions, User Characteristics an Constraints will be discussed. Following the Overall Description, will be an elaboration on the Specific Requirements for the NavUP system(product). For the Specific Requirements, External Interface Requirements, Functional Requirements, Performance Requirements, Design Constrants, Software Sytem Attributes and Other Requirements will be identified and discussed.
+			In this document, an Overall Description will be provided for the NavUP system(product). In the Overall Description, the Product Perspective, Product Functions, User Characteristics and Constraints will be discussed. Following the Overall Description, will be an elaboration on the Specific Requirements for the NavUP system(product). For the Specific Requirements, External Interface Requirements, Functional Requirements, Performance Requirements, Design Constrants, Software Sytem Attributes and Other Requirements will be identified and discussed.
 Thereafter, any relevant appendixes and indexes needed by this document will be provided.
 		\end{flushleft}
 \section{Overall Description}
+
+    \begin{flushleft}
+        This section provides an overview of the system as a whole. We will explain how the system works, as well as how it interacts with other systems.
+    \end{flushleft}
+    
+    
     \subsection{Product Perspective}
+    
+        NavUP is a mobile application used by students at the University of Pretoria. NavUP provides navigation of campus, providing traffic congestion and location services. NavUP will rely on other NavUP devices for real-time statistics and will interact with a primary server for pre-determined locations, events, POIs and venues. Both NavUP server and NavUP mobile will be present on the same network.
         \subsubsection{System Interfaces}
+        Todo: Identifying interacting subsystems first needs to be done.
         \subsubsection{User Interfaces}
+            Interaction between user and system will be achieved through the use of GUIs.
+            \begin{description}
+            \item[$\cdot$ User registration GUI] [Use case diagram for registration]
+            
+            \item[$\cdot$ User login GUI ][Use case diagram for login]
+            
+            \item[$\cdot$ User CRUD profile GUI] [Use case diagram for user profile CRUD]
+            
+            \item[$\cdot$ Location Search GUI] [Use case diagram for location search]
+            
+            \item[$\cdot$ Location Navigation GUI] [Use case diagram for location navigation]
+            \end{description}
+            
         \subsubsection{Hardware Interfaces}
         \subsubsection{Software Interfaces}
         \subsubsection{Communication Interfaces}
