@@ -1,3 +1,4 @@
+
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
@@ -56,19 +57,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \subsubsection{System Interfaces}
         Todo: Identifying interacting subsystems first needs to be done.
         \subsubsection{User Interfaces}
-            Interaction between user and system will be achieved through the use of GUIs.
-            \begin{description}
-            \item[$\cdot$ User registration GUI] [Use case diagram for registration]
-            
-            \item[$\cdot$ User login GUI ][Use case diagram for login]
-            
-            \item[$\cdot$ User CRUD profile GUI] [Use case diagram for user profile CRUD]
-            
-            \item[$\cdot$ Location Search GUI] [Use case diagram for location search]
-            
-            \item[$\cdot$ Location Navigation GUI] [Use case diagram for location navigation]
-            \end{description}
-            
+            Interaction between user and system will be achieved through the use of a GUI.        
         \subsubsection{Hardware Interfaces}
         \subsubsection{Software Interfaces}
         \subsubsection{Communication Interfaces}
@@ -89,15 +78,60 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 		\end{flushleft}
     \subsection{User Characteristics}
     \subsection{Constraints}
-    \subsection{Assumptions and Dependencies}
+        \begin{flushleft}
+        NavUP will be constrained by the wireless network infrastructure present around campus. Since the application requires connection to the database hosted over the same network as the Wi-Fi broadcasts, it is crucial for our application to function. Wi-Fi will also be needed to determine the location of the user.
+        \end{flushleft}
+        
+        \begin{flushleft}
+        Our next constraint is the our system interface to the GPS navigation system present within mobile devices. Given that NavUP will interface with multiple GPS systems, our interfaces will deviate from manufacturer-to-manufacturer. Quality and features of each GPS system may differ as well.
+        \end{flushleft}
+        
+        \begin{flushleft}
+        NavUP mobile will be constrained by the capacity of the database. Given that many devices will be using the same database, it could cause queueing of requests and data transfers.
+        \end{flushleft}
+        \subsection{Assumptions and Dependencies}
+        
+        \begin{flushleft}
+        We assume that NavUP will be used on mobile devices with sufficient processing power and memory to facilitate optimal operation.
+        \end{flushleft}
+        
+        \begin{flushleft}
+        We also assume that the basic operation of a GPS unit within every mobile device operates functionally the same. Adjustments need to be made to architecturally different GPS units within mobile devices using NavUP so as to operate the same.
+        \end{flushleft}
 \section{Specific Requirements}
+    \begin{flushleft}
+    This section gives a detailed description of the system and its features.
+    \end{flushleft}
     \subsection{External Interface Requirements}
 		\begin{itemize}
+		
 			\item System Interfaces
 			\item User Interfaces
+			
+			Firt-time users of the mobile application will be presented with a log-in page upon application launch. Registration can be navigated to from the log-in page.
+			
+			Returning users of the mobile application will be presented with a search-page. This page facilitate the searching of venues,events,POIs and locations.
+			
+			Once a user has found an event,venue,POI or location, a navigation-page will be presented to the user.
+			
+			Registered users will be given an option to CRUD their profile using the personalization-page.
+			
+			
 			\item Hardware Interfaces
+			
+			NavUP mobile does not have designated hardware thus no direct hardware interfaces are present. The GPS unit is managed by the mobile phone's GPS application. The hardware connection to the database is made through the mobile phone's operating system.
+			
 			\item Software Interfaces
+			
+			NavUP communicates with the GPS application to retrieve geographical information of where the user is located.
+			
+			NavUP also communicates with the database to retrieve locations,events,venues and POIs. Personal profiles and bookmarked locations is also interfaced this way.
+			
+			
 			\item Communication Interfaces
+			
+			NavUP will use existing techniques used within mobile phones to facilitate communication. These techniques will he handled implicitly by the mobile devices operating system.
+			
 		\end{itemize}
     \subsection{Functional Requirements}
     	\begin{itemize}
