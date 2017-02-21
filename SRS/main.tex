@@ -36,6 +36,12 @@
             Developer & Person/s developing the system. COS301 Software Engineers
             \\
             \hline
+            GPS & Global Positioning System used by devices to determine current locations
+            \\
+            \hline
+            Heat Maps & Graphical representation of data in the form of colours on a map.
+            \\
+            \hline
             \end{tabular}
         \end{table}
     \subsection{Overview}
@@ -76,6 +82,13 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 			\end{itemize}
 		\end{flushleft}
     \subsection{User Characteristics}
+        \begin{flushleft}
+            Students, Lecturers and Guests will interact with the system.
+            \break
+            Students will interact for venues used for classes for modules, social events and places of interest.
+            Guests will interact for navigation to locations unknown to them.
+            Lecturers will use the system for efficient traffic-free routing.
+        \end{flushleft}
     \subsection{Constraints}
         \begin{flushleft}
         NavUP will be constrained by the wireless network infrastructure present around campus. Since the application requires connection to the database hosted over the same network as the Wi-Fi broadcasts, it is crucial for our application to function. Wi-Fi will also be needed to determine the location of the user.
@@ -133,33 +146,48 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 			
 		\end{itemize}
     \subsection{Functional Requirements}
-    	\begin{itemize}
-    	\item R1 NavUP shall provide the user with navigation functions to navigate the user around campus
+    	
+    	\subsection{Requirement 1}
+    	\subsubsection{Description}
+    	NavUP shall provide the user with navigation functions to navigate the user around campus
         \begin{itemize}
         \item R1.1 NavUP shall provide the user with their current location.
         \item R1.2 NavUP shall provide the user with directions from the current location to their desired location around campus.
-        \begin{itemize}
-        \item R1.2.1 NavUP will notify the user of any traffic congestion along the route according to the number of users connected to the Wi-Fi in that location.
-        \end{itemize}
+            \begin{itemize}
+                \item R1.2.1 NavUP will notify the user of any traffic congestion along the route according to the number of users connected to the Wi-Fi in that location.
+            \end{itemize}
         \item R1.3 NavUP shall allow the user to save their current location.
         \item R1.4 NavUP shall allow the user to share their location on the NavUP server, for other users to find them.
         \end{itemize}
-        \item R2 NavUP shall provide the user with a user interface to allow users to enter information
+        \subsubsection{Use case diagram}
+        \subsection{Requirement 2}
+        \subsubsection{Description}
+        NavUP shall provide the user with a user interface to allow users to enter information
         \begin{itemize}
         \item R2.1 NavUP will allow user to enter information such as their desired location, places of interests and their personal details.
         \item R2.2 NavUP wil allow user to recall saved their location on the UI.
         \item R2.3 The NavUP UI will allow users to check-in at specific locations.
         \item R2.4 The NavUP will have a find me functionality on the UI.
         \end{itemize}
-        \item R3 NavUP shall push new information to the users according to their preference
+        \subsubsection{Use case diagram}
+        \subsection{Requirement 3}
+        \subsubsection{Description}
+        NavUP shall push new information to the users according to their preference
         \begin{itemize}
         \item R3.1 NavUP will notify user of close places of interests around campus.
         \begin{itemize}
         \item R3.1.1 NavUP will use the records of checked-in locations to guess the places that the user likes and suggest similar places. 
         \end{itemize}
         \end{itemize}
-        \item R4 NavUP shall keep record of steps taken by the user around campus.
-    	\end{itemize}
+        \subsubsection{Use case diagram}
+        \pagebreak
+        \subsection{Requirement 4}
+        \subsubsection{Description}
+        NavUP shall keep record of steps taken by the user around campus.
+        \subsubsection{Use case diagram}
+        
+        \subsection{Actor-System Interaction Models}
+    	\subsection{Traceability Matrix}
         \begin{table}[h!]
         \centering
         \small
