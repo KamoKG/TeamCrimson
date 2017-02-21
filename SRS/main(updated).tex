@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{NAVUP\\ Software Requirements Specification\\ University of Pretoria}
+\author{Darren Adams\hspace{2 cm} - u14256232\\ Keanan Jones\hspace{2 cm} - u13036892\\ Lesego Makaleng\hspace{2 cm} - u15175716\\ Dedre Olwage\hspace{2 cm} - u15015239\\ Kamogelo Tsipa\hspace{2 cm} - u13010931 }
+\date{February 2017}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Introduction}
+    \subsection{Purpose}
+		\begin{flushleft}
+			This document serves the purpose of providing an intensive description for the NavUP system(product). It will also identify the possible requirements and restrictions for the NavUP system(product). This document will help the developer to gain insight on what the system(product) should do, to better understand how the system should be implemented in the implementation phase.
+		\end{flushleft}
+    \subsection{Scope}
+		\begin{flushleft}
+			The system(product) to be developed is called NavUP. NavUP will serve as a navigation application. NavUP intends to provide different users with optimal routes to destinations across the University of Pretoria campus.
+			
+			Furthermore NavUP provides a way saving and searching locations, both indoors and outdoors. NavUP will also facilitate search-ability of POIs and events. The Wi-Fi infrastructure within campus will be used for administering location and navigation services.
+		\end{flushleft}
+    \subsection{Definitions, Acronyms and Abbreviations}
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            Term & Definition \\
+            \hline
+            POI & Point of Interest \\
+            \hline
+            Wi-Fi & Wireless network infrastructure \\
+            \hline
+            Developer & Person/s developing the system. COS301 Software Engineers
+            \\
+            \hline
+            \end{tabular}
+        \end{table}
+    \subsection{Overview}
+		\begin{flushleft}
+			In this document, an Overall Description will be provided for the NavUP system(product). In the Overall Description, the Product Perspective, Product Functions, User Characteristics and Constraints will be discussed. Following the Overall Description, will be an elaboration on the Specific Requirements for the NavUP system(product). For the Specific Requirements, External Interface Requirements, Functional Requirements, Performance Requirements, Design Constrants, Software Sytem Attributes and Other Requirements will be identified and discussed.
+Thereafter, any relevant appendixes and indexes needed by this document will be provided.
+		\end{flushleft}
+\section{Overall Description}
+
+    \begin{flushleft}
+        This section provides an overview of the system as a whole. We will explain how the system works, as well as how it interacts with other systems.
+    \end{flushleft}
+    
+    
+    \subsection{Product Perspective}
+    
+        NavUP is a mobile application used by students at the University of Pretoria. NavUP provides navigation of campus, providing traffic congestion and location services. NavUP will rely on other NavUP devices for real-time statistics and will interact with a primary server for pre-determined locations, events, POIs and venues. Both NavUP server and NavUP mobile will be present on the same network.
+        \subsubsection{System Interfaces}
+        Todo: Identifying interacting subsystems first needs to be done.
+        \subsubsection{User Interfaces}
+            Interaction between user and system will be achieved through the use of GUIs.
+            \begin{description}
+            \item[$\cdot$ User registration GUI] [Use case diagram for registration]
+            
+            \item[$\cdot$ User login GUI ][Use case diagram for login]
+            
+            \item[$\cdot$ User CRUD profile GUI] [Use case diagram for user profile CRUD]
+            
+            \item[$\cdot$ Location Search GUI] [Use case diagram for location search]
+            
+            \item[$\cdot$ Location Navigation GUI] [Use case diagram for location navigation]
+            \end{description}
+            
+        \subsubsection{Hardware Interfaces}
+        \subsubsection{Software Interfaces}
+        \subsubsection{Communication Interfaces}
+        \subsubsection{Memory}
+        \subsubsection{Operations}
+        \subsubsection{Site Adaptation Requirements}
+    \subsection{Product Functions}
+		\begin{flushleft}
+			General functions for the NavUP system(product) include:
+			\begin{itemize}
+   		 	\item The ability to use several Wi-Fi connection points as navigation tools
+			 	\item The ability to calculate optimal routes from one destination to another, bases on the user's needs (i.e it must cater for routes for those with disabilities etc.).
+			 	\item The ability to provide accurate information about pedestrain traffic based on how many devices are connected to certain Wi-Fi connection points.
+				 \item The ability to reroute the user based on certain preferences.
+				 \item The ability to calculate the user's current location while indoors and while outdoors.
+				 \item The ability to search for locations, save locations, and providing directions to a location. 
+			\end{itemize}
+		\end{flushleft}
+    \subsection{User Characteristics}
+    \subsection{Constraints}
+    \subsection{Assumptions and Dependencies}
+\section{Specific Requirements}
+    \subsection{External Interface Requirements}
+		\begin{itemize}
+			\item System Interfaces
+			\item User Interfaces
+			\item Hardware Interfaces
+			\item Software Interfaces
+			\item Communication Interfaces
+		\end{itemize}
+    \subsection{Functional Requirements}
+    	\begin{itemize}
+    	\item R1 NavUP shall provide the user with navigation functions to navigate the user around campus
+        \begin{itemize}
+        \item R1.1 NavUP shall provide the user with their current location.
+        \item R1.2 NavUP shall provide the user with directions from the current location to their desired location around campus.
+        \begin{itemize}
+        \item R1.2.1 NavUP will notify the user of any traffic congestion along the route according to the number of users connected to the Wi-Fi in that location.
+        \end{itemize}
+        \item R1.3 NavUP shall allow the user to save their current location.
+        \item R1.4 NavUP shall allow the user to share their location on the NavUP server, for other users to find them.
+        \end{itemize}
+        \item R2 NavUP shall provide the user with a user interface to allow users to enter information
+        \begin{itemize}
+        \item R2.1 NavUP will allow user to enter information such as their desired location, places of interests and their personal details.
+        \item R2.2 NavUP wil allow user to recall saved their location on the UI.
+        \item R2.3 The NavUP UI will allow users to check-in at specific locations.
+        \item R2.4 The NavUP will have a find me functionality on the UI.
+        \end{itemize}
+        \item R3 NavUP shall push new information to the users according to their preference
+        \begin{itemize}
+        \item R3.1 NavUP will notify user of close places of interests around campus.
+        \begin{itemize}
+        \item R3.1.1 NavUP will use the records of checked-in locations to guess the places that the user likes and suggest similar places. 
+        \end{itemize}
+        \end{itemize}
+        \item R4 NavUP shall keep record of steps taken by the user around campus.
+    	\end{itemize}
+        \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Requirments & Navigation & Heat Maps & Saved and Current Locations & Push Notifications & Activities \\
+        \hline
+        R1 & & & & &\\
+        \hline
+        R1.1 & & & X & &\\
+        \hline
+        R1.2 & & & & &\\
+        \hline
+        R1.2.1 & & X & & &\\
+        \hline
+        R1.3 & & & X & & \\
+        \hline
+        R1.4 & X & & & & \\
+        \hline
+        R2 & & & & & \\
+        \hline
+        R2.1 & & & & X & \\
+        \hline
+        R2.2 & & & X & & \\
+        \hline
+        R2.3 & & & X & & \\
+        \hline
+        R2.4 & X & & & & \\
+        \hline
+        R3 & & & & & \\
+        \hline
+        R3.1 & & & & & \\
+        \hline
+        R3.1.1 & & & & X & \\
+        \hline
+        R4 & & & & & X \\
+        \hline
+        \end{tabular}
+        \end{table}
+    \subsection{Performance Requirements}
+    \subsection{Design Constraints}
+    \subsection{System Software Attributes}
+    \subsection{Other Requirements}
+    
+\section*{Appendixes}
+\section*{Index}
+\end{document}
