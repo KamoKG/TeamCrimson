@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {diagrams/}  }
 
 \title{NAVUP\\ Software Requirements Specification\\ University of Pretoria}
 \author{Darren Adams\hspace{2 cm} - u14256232\\ Keanan Jones\hspace{2 cm} - u13036892\\ Lesego Makaleng\hspace{2 cm} - u15175716\\ Dedre Olwage\hspace{2 cm} - u15015239\\ Kamogelo Tsipa\hspace{2 cm} - u13010931 }
@@ -146,9 +148,11 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 			
 		\end{itemize}
     \subsection{Functional Requirements}
-    	
-    	\subsection{Requirement 1}
-    	\subsubsection{Description}
+    This section includes the requirements that specify all the fundamental actions of the software system. The requirements are separated into modules that are cohesive with low coupling.
+    
+    
+    \subsubsection{Requirement 1}
+    	\subsubsection*{Description}
     	NavUP shall provide the user with navigation functions to navigate the user around campus
         \begin{itemize}
         \item R1.1 NavUP shall provide the user with their current location.
@@ -159,9 +163,8 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R1.3 NavUP shall allow the user to save their current location.
         \item R1.4 NavUP shall allow the user to share their location on the NavUP server, for other users to find them.
         \end{itemize}
-        \subsubsection{Use case diagram}
-        \subsection{Requirement 2}
-        \subsubsection{Description}
+        \subsubsection{Requirement 2}
+        \subsubsection*{Description}
         NavUP shall provide the user with a user interface to allow users to enter information
         \begin{itemize}
         \item R2.1 NavUP will allow user to enter information such as their desired location, places of interests and their personal details.
@@ -169,9 +172,8 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R2.3 The NavUP UI will allow users to check-in at specific locations.
         \item R2.4 The NavUP will have a find me functionality on the UI.
         \end{itemize}
-        \subsubsection{Use case diagram}
-        \subsection{Requirement 3}
-        \subsubsection{Description}
+        \subsubsection{Requirement 3}
+        \subsubsection*{Description}
         NavUP shall push new information to the users according to their preference
         \begin{itemize}
         \item R3.1 NavUP will notify user of close places of interests around campus.
@@ -179,12 +181,432 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R3.1.1 NavUP will use the records of checked-in locations to guess the places that the user likes and suggest similar places. 
         \end{itemize}
         \end{itemize}
-        \subsubsection{Use case diagram}
         \pagebreak
-        \subsection{Requirement 4}
-        \subsubsection{Description}
+        \subsubsection{Requirement 4}
+        \subsubsection*{Description}
         NavUP shall keep record of steps taken by the user around campus.
-        \subsubsection{Use case diagram}
+
+    
+    
+    
+    
+    
+    
+    \subsection{Modules}
+    \subsubsection{Location Finder Module}
+    Diagram:
+    	
+    \includegraphics[scale=.7]{LocationFinder}
+    \begin{flushleft}
+    \textbf{Use case:} Get Current Location (R1.1)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall determine the user's location or visitor's 		current location, whether indoors or outdoors.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has already logged in to the application. Visitors need not login but certain functionality will be restricted.
+	\newline    
+	
+1. The user or visitor sends a request to get their current location.
+    
+2. The system obtains and returns the location of the user or visitor.
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Search for Location (R1.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system will allow users and visitors to search for any location based on their criteria.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user or visitor has accessed search location menu option.
+	\newline    
+	
+1. The user chooses to search the location by building name, lecture hall or venue name.
+
+2. The system displays the choices to the user.
+
+3. The user selects the desired location.
+
+4. The system returns the location and gives user option to navigate to the location.
+\end{flushleft}
+
+\subsubsection{Navigation Module}
+    Diagram:
+    
+    \includegraphics[scale=.7]{Navigation}
+    
+    \begin{flushleft}
+    \textbf{Use case:} Get Directions of Location (R1.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall navigate the user or visitor to their desired location.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the User has already logged into the application and has accessed the search location menu option. Visitors need not login but functionality will be restricted.
+	\newline    
+	
+1. The user or visitor chooses to search the location by building name, lecture hall or venue name.
+
+2. The system displays the choices to the user.
+
+3. The user selects the desired venue. 
+
+4. The system provides the directions of the location.
+
+\end{flushleft}
+    
+    \begin{flushleft}
+    \textbf{Use case:} Filter Directions by User Preference (R1.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall filter the directions based on the user's or visitor's preferences.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the User has already logged into the application and has accessed the search location menu option. Visitors need not login but functionality will be restricted.
+	\newline    
+	
+1. The user is prompted to select optional path filters.
+
+2. The system updates the directions based on selected filters.
+
+
+\end{flushleft}
+    
+    \begin{flushleft}
+    \textbf{Use case:} Get Estimated Time of Arrival (ETA) (R1.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall provide the user with an estimated time of arrival to the location they are navigating to.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user or visitor has searched for a location to navigate to.
+	\newline    
+	
+1. The user selects the venue to navigate to.
+
+2. The system returns the optimal route and the ETA to the venue.
+
+\end{flushleft}
+   
+   \subsubsection{Location Information Module}
+    Diagram:
+    
+    \includegraphics[scale=.7]{LocationInformation2} 
+    
+    \begin{flushleft}
+    \textbf{Use case:} Save Location (R1.3)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the user to save a location.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the User has already searched for the desired location to save.
+	\newline    
+	
+1.The user chooses to search for the location by building name, lecture hall or venue name or access previously searched venues.
+
+2.The system displays the location to the user.
+
+3.The user selects to save the location.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Create Read Update and Delete(CRUD) Venue Information (R2.1)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the different levels of users and agents the ability to create read update and delete information about different venues on campus.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the admin or user, depending on the case, has logged in to the application database. 
+	\newline    
+	
+1. The user queries the database for the desired venue.
+
+2. The system returns the results from the query.
+
+3. The administrator selects from the results to perform a R.A.D operation.
+
+4. The system updates the database after the changes have been made.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Create Read Update and Delete(CRUD) Points of Interest  (R2.1)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the admin the ability to create, read update and delete information about points of interest around campus based on their interests.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the admin or user, depending on the case, has logged in to the application database. 
+	\newline    
+	
+1. The user selects from a list of points of interests.
+
+2. The system returns points of interests based on the user's criteria.
+
+3. The user selects which one they want to navigate to.
+
+4. The system returns information about the venue and also directions to that venue.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} View Information on locations  (R2.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the user to view information about locations, buildings and venues.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has searched for the desired location in order to obtain more information about the location.
+	\newline    
+	
+1. The user chooses the location, venue or building.
+
+2. The system returns information based on the user's criteria. 
+
+3. The user access the desired information.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} View Points of Interest  (R2.2)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the user to view information on points of interest.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has searched for the desired location in order to obtain more information about the location.
+	\newline    
+	
+1. The user chooses the location, venue or building.
+
+2. The system returns information based on the user's criteria. 
+
+3. The user access the desired information.
+
+\end{flushleft}
+
+\subsubsection{Pedestrian Visualizer Module}
+    Diagram:
+    
+    \includegraphics[scale=.7]{PedestrianVisualizer} 
+
+\begin{flushleft}
+    \textbf{Use case:} Get Pedestrian Traffic  (R1.2.1)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall provide users with accurate information about pedestrian traffic based on how many devices are connected to certain WI-FI access points.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has searched for a location to navigate to.
+	\newline    
+	
+1. The user has selected to navigate to a desired location.
+
+2. The system returns general pedestrian traffic for the route selected and the optimal route with less pedestrian traffic.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Sharing Location  (R1.4)
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow users who have logged in to the application the ability to share their current location.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has obtained their current location.
+	\newline    
+	
+1. The user selects to share their location with a friend or anyone with access to the application.
+
+2. The systems generates a pin and allows the user to share their location.
+
+\end{flushleft}
+
+\subsubsection{Events and Activities Module}
+    Diagram:
+    
+    \includegraphics[scale=.7]{EventsAndActivities} 
+    
+\begin{flushleft}
+    \textbf{Use case:} Calculating Rewards  
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall provide rewards for the user based on calculating the amount of steps the user has walked and also rewards based on class attendance and other activities such as that.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the user has logged into the application and selected an activity with a goal to meet.
+	\newline    
+	
+1. The user selects an activity to take part in with a reward attached to it.
+
+2. The system calculates if the requirements for the reward have been met such as the steps the user has taken and sums it up for the period within the goal. 
+
+3. The user receives updates based on their rewards.
+
+4. After completing the goal, the system provides the user with a reward.
+
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Create Read Update and Delete(CRUD) Events and Activities  
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the administrator or agent the ability to create, read, update or delete information on activities users might be interested in. 
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the administrator or agent has logged in to the application database and has searched for a location to place an event or activity.
+	\newline    
+
+1. The administrator applies CRUD operations on the database for various activities.
+
+2. The system updates the database after the changes have been.
+
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{Use case:} Set goals and Rewards  
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall allow the administrator the ability to set and add goals and rewards for the users after inserting activity information. 
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before the use case can be initiated, the administrator has logged in to the application database and activity other information has been inserted.
+	\newline    
+
+1. The administrator sets goals for users to match to in order to receive a reward.
+
+2. The system tracks the user progress through the period the goal has been set.
+
+3. The administrator reviews the progress report from the system and the appropriate reward is awarded to the user.
+
+
+\end{flushleft}
+
+\subsubsection{User Management Module}
+    Diagram:
+    
+    \includegraphics[scale=.7]{UserManagement} 
+    
+    \begin{flushleft}
+    \textbf{Use case:} login  
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall provide the user, admin and agent with an interface to enter their credentials and login.
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    There are no prerequisites for this action
+	\newline    
+
+1. The user, admin and agent inputs the required credentials.
+
+2. The system validates the credentials and logs the user, admin or agent in if valid. 
+
+\end{flushleft}
+
+    \begin{flushleft}
+    \textbf{Use case:} Create Read Update and Delete(CRUD) User Account  
+    \newline
+    	
+    \textbf{Brief Description:}
+    \newline
+    The system shall provide the administrator, user and agent with the ability to CRUD their own accounts. 
+    \newline
+    
+    \textbf{Initial Step-By-Step Description:}
+    
+    Before this use case can be initiated, the administrator, user and agent has logged in to the application database.
+	\newline    
+
+1. The user, admin or agent performs CRUD actions for their account.
+
+2. The system changes the database based on the CRUD action.
+ 
+
+\end{flushleft}
+    
+    
+    
+    
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+    	
         
         \subsection{Actor-System Interaction Models}
     	\subsection{Traceability Matrix}
