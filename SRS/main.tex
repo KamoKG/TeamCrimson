@@ -76,16 +76,6 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     \subsection{Product Perspective}
     
         NavUP is a mobile application used by students at the University of Pretoria. NavUP provides navigation of campus, providing traffic congestion and location services. NavUP will rely on other NavUP devices for real-time statistics and will interact with a primary server for pre-determined locations, events, POIs and venues. Both NavUP server and NavUP mobile will be present on the same network.
-        \subsubsection{System Interfaces}
-        Todo: Identifying interacting subsystems first needs to be done.
-        \subsubsection{User Interfaces}
-            Interaction between user and system will be achieved through the use of a GUI.        
-        \subsubsection{Hardware Interfaces}
-        \subsubsection{Software Interfaces}
-        \subsubsection{Communication Interfaces}
-        \subsubsection{Memory}
-        \subsubsection{Operations}
-        \subsubsection{Site Adaptation Requirements}
     \subsection{Product Functions}
 		\begin{flushleft}
 			General functions for the NavUP system(product) include:
@@ -100,11 +90,12 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 		\end{flushleft}
     \subsection{User Characteristics}
         \begin{flushleft}
-            Students, Lecturers and Guests will interact with the system.
+            Students, Lecturers and Guests and Agents will interact with the system.
             \break
             Students will interact for venues used for classes for modules, social events and places of interest.
             Guests will interact for navigation to locations unknown to them.
             Lecturers will use the system for efficient traffic-free routing.
+            Agents will use the system for Point-of-Interest creation.
         \end{flushleft}
     \subsection{Constraints}
         \begin{flushleft}
@@ -133,8 +124,10 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     \end{flushleft}
     \subsection{External Interface Requirements}
 		\begin{itemize}
-		
+		    \pagebreak
 			\item System Interfaces
+			
+			\includegraphics[scale=.7]{blockDiagramSystemInterface}
 			\item User Interfaces
 			
 			Firt-time users of the mobile application will be presented with a log-in page upon application launch. Registration can be navigated to from the log-in page.
@@ -163,13 +156,10 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 			
 		\end{itemize}
     \subsection{Functional Requirements}
-    	
-    	\subsection{Requirement 1}
-    	\subsubsection{Description}
     This section includes the requirements that specify all the fundamental actions of the software system. The requirements are separated into modules that are cohesive with low coupling.
     
-    
-    \subsubsection{Requirement 1}
+    	\subsubsection{Requirement 1}
+    	
     	\subsubsection*{Description}
     	NavUP shall provide the user with navigation functions to navigate the user around campus
         \begin{itemize}
@@ -182,13 +172,8 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R1.4 NavUP shall allow the user to share their location on the NavUP server, for other users to find them.
         \end{itemize}
 
-        \subsubsection{Use case diagram}
-        \subsection{Requirement 2}
-        \subsubsection{Description}
-
         \subsubsection{Requirement 2}
         \subsubsection*{Description}
-
         NavUP shall provide the user with a user interface to allow users to enter information
         \begin{itemize}
         \item R2.1 NavUP will allow user to enter information such as their desired location, places of interests and their personal details.
@@ -196,9 +181,6 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R2.3 The NavUP UI will allow users to check-in at specific locations.
         \item R2.4 The NavUP will have a find me functionality on the UI.
         \end{itemize}
-        \subsubsection{Use case diagram}
-        \subsection{Requirement 3}
-        \subsubsection{Description}
         \subsubsection{Requirement 3}
         \subsubsection*{Description}
         NavUP shall push new information to the users according to their preference
@@ -208,12 +190,10 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R3.1.1 NavUP will use the records of checked-in locations to guess the places that the user likes and suggest similar places. 
         \end{itemize}
         \end{itemize}
-        \subsubsection{Use case diagram}
         \pagebreak
-        \subsection{Requirement 4}
-        \subsubsection{Description}
+        \subsubsection{Requirement 4}
+        \subsubsection*{Description}
         NavUP shall keep record of steps taken by the user around campus.
-        \subsubsection{Use case diagram}
     
     \subsection{Modules}
     \subsubsection{Location Finder Module}
@@ -221,7 +201,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     	
     \includegraphics[scale=.7]{LocationFinder}
     \begin{flushleft}
-    \textbf{Use case:} Get Current Location (R1.1)
+    \textbf{Use case:} Get Current Location
     \newline
     	
     \textbf{Brief Description:}
@@ -240,7 +220,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
 
 \begin{flushleft}
-    \textbf{Use case:} Search for Location (R1.2)
+    \textbf{Use case:} Search for Location
     \newline
     	
     \textbf{Brief Description:}
@@ -268,7 +248,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     \includegraphics[scale=.7]{Navigation}
     
     \begin{flushleft}
-    \textbf{Use case:} Get Directions of Location (R1.2)
+    \textbf{Use case:} Get Directions of Location
     \newline
     	
     \textbf{Brief Description:}
@@ -292,7 +272,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
     
     \begin{flushleft}
-    \textbf{Use case:} Filter Directions by User Preference (R1.2)
+    \textbf{Use case:} Filter Directions by User Preference
     \newline
     	
     \textbf{Brief Description:}
@@ -313,7 +293,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
     
     \begin{flushleft}
-    \textbf{Use case:} Get Estimated Time of Arrival (ETA) (R1.2)
+    \textbf{Use case:} Get Estimated Time of Arrival (ETA)
     \newline
     	
     \textbf{Brief Description:}
@@ -338,7 +318,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     \includegraphics[scale=.7]{LocationInformation2} 
     
     \begin{flushleft}
-    \textbf{Use case:} Save Location (R1.3)
+    \textbf{Use case:} Save Location
     \newline
     	
     \textbf{Brief Description:}
@@ -360,7 +340,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
 
 \begin{flushleft}
-    \textbf{Use case:} Create Read Update and Delete(CRUD) Venue Information (R2.1)
+    \textbf{Use case:} Create Read Update and Delete(CRUD) Venue Information
     \newline
     	
     \textbf{Brief Description:}
@@ -408,7 +388,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
 
 \begin{flushleft}
-    \textbf{Use case:} View Information on locations  (R2.2)
+    \textbf{Use case:} View Information on locations
     \newline
     	
     \textbf{Brief Description:}
@@ -430,7 +410,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
 
 \begin{flushleft}
-    \textbf{Use case:} View Points of Interest  (R2.2)
+    \textbf{Use case:} View Points of Interest
     \newline
     	
     \textbf{Brief Description:}
@@ -457,7 +437,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
     \includegraphics[scale=.7]{PedestrianVisualizer} 
 
 \begin{flushleft}
-    \textbf{Use case:} Get Pedestrian Traffic  (R1.2.1)
+    \textbf{Use case:} Get Pedestrian Traffic
     \newline
     	
     \textbf{Brief Description:}
@@ -477,7 +457,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \end{flushleft}
 
 \begin{flushleft}
-    \textbf{Use case:} Sharing Location  (R1.4)
+    \textbf{Use case:} Sharing Location
     \newline
     	
     \textbf{Brief Description:}
@@ -1145,11 +1125,4 @@ b)	Gets logged out.
         \end{tabular}
         
         \end{table}
-    \subsection{Performance Requirements}
-    \subsection{Design Constraints}
-    \subsection{System Software Attributes}
-    \subsection{Other Requirements}
-    
-\section*{Appendixes}
-\section*{Index}
 \end{document}
