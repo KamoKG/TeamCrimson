@@ -614,18 +614,24 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
  
 
 \end{flushleft}
-        
+        \pagebreak
         \subsection{Actor-System Interaction Models}
-			
-			
-        		\centering
-					\textbf{UC1: Get Current Location}\\
+		
+        \begingroup
+			\setlength{\tabcolsep}{10pt} 
+			\renewcommand{\arraystretch}{1.5}
+			\vspace{5mm}
+			\begin{flushleft}
+           		 \textbf{UC1: Get Current
+                    Location}\\
+             \end{flushleft}
+        	\centering 
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user is logged on to the NavUP system.& \\
+       		\multicolumn{2}{c}{Preconditions: The user is logged on to the NavUP system.}  \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		  & 0.	The system displays the main menu options.\\
        		 \hline
@@ -635,20 +641,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		5.	TUVEW the user views their current location. & \\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
      
-
-			
-        		\centering
-					\textbf{UC2: Search for Location}\\
+			\vspace{5mm}
+            \begin{flushleft}
+			\textbf{UC2: Search for Location}\\
+            \end{flushleft}
+        	\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.& \\
+       		 \multicolumn{2}{c}{Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system displays three options whereby to search for a location.\\
        		 \hline
@@ -663,19 +670,23 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 5.	TUCEW user chooses to navigate to desired location. & \\
        		 \hline
-        		Postconditions: The system loads directions from the database.& \\
+        		\multicolumn{2}{c}{Postconditions: The system loads directions from the database.}\\
         		\hline
         \end{tabular} 
 
-		
-        		\centering
-					\textbf{UC3: Get Directions of Location}\\
+		\newpage
+        
+		 \vspace{5mm}
+         \begin{flushleft}
+         \textbf{UC3: Get Directions of Location}\\
+         \end{flushleft}
+        	\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.& \\
+       		 \multicolumn{2}{c}{Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.}\\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system displays three options whereby to search for a location.\\
        		 \hline
@@ -692,20 +703,22 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
         		7.	TUCEW user following the directions to the desired location. & \\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
         
-
-		
-        		\centering
-					\textbf{UC4: Filter Directions by User Preference}\\
+        \newpage
+				 \vspace{5mm}
+                 \begin{flushleft}
+                 \textbf{UC4: Filter Directions by User Preference}\\
+                  \end{flushleft}
+        		\centering	
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The User has already logged into the application and has accessed the search location menu option. Visitors need not login but\\ functionality will be restricted.& \\
+       		\multicolumn{2}{c}{ Preconditions: The User has already logged into the application and has accessed the search location menu option. Visitors need not login but functionality will be restricted.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system displays options whereby to search for a location.\\
        		 \hline
@@ -723,20 +736,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 	3.	TUCEW the user to navigating to desired location. &\\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
      
-
-		
-        		\centering
-					\textbf{UC5: Get Estimated Time of Arrival (ETA)}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC5: Get Estimated Time of Arrival (ETA)}\\
+                \end{flushleft}
+        		\centering	
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has searched for a location to navigate to.& \\
+       		 \multicolumn{2}{c}{Preconditions: The user has searched for a location to navigate to.}\\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		  & 0.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option chosen.\\
        		 \hline
@@ -746,20 +760,23 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 5.	TUCEW user views and follows the directions. & \\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.}\\
         		\hline
         \end{tabular} 
         
-
-		
-        		\centering
-					\textbf{UC6: Save Location}\\
+        \newpage
+        
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC6: Save Location}\\
+               \end{flushleft}
+        		\centering			
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions:Before the use case can be initiated, the User has already searched for the desired location to save.& \\
+       		\multicolumn{2}{c}{ Preconditions:Before the use case can be initiated, the User has already searched for the desired location to save.}\\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system provides the directions to the location (and asks the user if they want to save the location, TUCCW Save Location).\\
        		 \hline
@@ -775,20 +792,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 3.	TUCEW user following the directions to the desired location. &\\
        		 \hline
-        		Postconditions: The system database is altered. \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered.} \\
         		\hline
         \end{tabular} 
        
-
-		
-        		\centering
-					\textbf{UC7: Create Read Update and Delete(CRUD) Venue Information}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC7: Create Read Update and Delete(CRUD) Venue Information}\\
+                \end{flushleft}
+        		\centering			
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The admin or user, depending on the case, has logged in to the application database.& \\
+       		 \multicolumn{2}{c}{Preconditions: The admin or user, depending on the case, has logged in to the application database.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system shows different venues.\\
        		 \hline
@@ -799,20 +817,23 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 				\hline
 					5.	TUCEW user views the different venues.&\\
        		 \hline
-        		Postconditions: The system database is altered. \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered.} \\
         		\hline
         \end{tabular} 
        
-
-				
-        		\centering
-					\textbf{UC8: Create Read Update and Delete(CRUD) Venue Information}\\
+       \newpage
+       
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC8: Create Read Update and Delete(CRUD) Venue Information}\\
+                \end{flushleft}
+        		\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The admin or user, depending on the case, has logged in to the application database.& \\
+       		 \multicolumn{2}{c}{Preconditions: The admin or user, depending on the case, has logged in to the application database.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system shows different points of interest.\\
        		 \hline
@@ -823,7 +844,7 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \\g)	Update a point of interest.
 \\1.	Delete a point of interest.
 
- 				&2.	2.	The system:\\
+ 				&2.	The system:\\
 
 \\a)	Updates a point of interest (by inserting the event/activity into the \\database).
 \\b)	Fetches a point of interest from the database for viewing.
@@ -833,19 +854,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 	3.	TUCEW the administrator/user viewing changes to events/activities. &\\
        		 \hline
-        		Postconditions: The system database is altered. \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered.} \\
         		\hline
         \end{tabular} 
        
-		
-        		\centering
-					\textbf{UC9: View Information on Locations}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC9: View Information on Locations}\\
+                \end{flushleft}
+        		\centering	
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has searched for the desired location to obtain more information about the location.& \\
+       		 \multicolumn{2}{c}{Preconditions: The user has searched for the desired location to obtain more information about the location.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		& 0.	The system searches for a location, TUCCW Search Location.\\
        		 \hline
@@ -853,20 +876,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 3.	TUCEW user viewing information on locations. &\\
        		 \hline
-        		Postconditions: None. & \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
       
-
-		
-        		\centering
-					\textbf{UC10: View Points of Interest}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC10: View Points of Interest}\\
+                \end{flushleft}
+        		\centering			
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has provided the application with information about their interests.& \\
+       		\multicolumn{2}{c}{ Preconditions: The user has provided the application with information about their interests.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system displays a list of points of interests based on the user's criteria.\\
        		 \hline
@@ -874,26 +898,27 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		 3.	TUCEW user views the information and directions. &\\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
       
-
-		
-        		\centering
-					\textbf{UC11: Get Pedestrian Traffic}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC11: Get Pedestrian Traffic}\\
+                \end{flushleft}
+        		\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has searched for a location to navigate to.& \\
+       		\multicolumn{2}{c}{ Preconditions: The user has searched for a location to navigate to.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		  & 0.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option chosen.\\
        		 \hline
        		 1.	The user selects the desired location. & 2.	The system returns general pedestrian traffic for the selected route, and an optimal route with less pedestrian traffic.\\
         		\hline
-       		 3.	The user chooses a route. & 4.	The system displaysdirections following the chosen route to the desired location.\\
+       		 3.	The user chooses a route. & 4.	The system displays directions following the chosen route to the desired location.\\
         		\hline
        		 5.	The user chooses:\\
 
@@ -907,20 +932,23 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
         		7.	The user views and follows the directions to their desired location. & \\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
      
-
-		
-        		\centering
-					\textbf{UC12: Sharing Location}\\
+     \newpage
+     
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC12: Sharing Location}\\
+                \end{flushleft}
+        		\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has obtained their current location.& \\
+       		\multicolumn{2}{c}{ Preconditions: The user has obtained their current location.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		  & 0.	The system displays the user's current location, TUCCW Get Current Location.\\
        		 \hline
@@ -928,22 +956,22 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		3.	TUCEW user acknowledging the confirmation message. &\\
        		 \hline
-        		Postconditions: None.& \\
+        		\multicolumn{2}{c}{Postconditions: None.} \\
         		\hline
         \end{tabular} 
        
 
-		
-
-	
-        		\centering
-					\textbf{UC13: Calculating Rewards}\\
+				\vspace{5mm}
+                \begin{flushleft}
+				\textbf{UC13: Calculating Rewards}\\
+				\end{flushleft}
+        		\centering	
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The user has logged into the application and selected a goal to meet.& \\
+       		 \multicolumn{2}{c}{Preconditions: The user has logged into the application and selected a goal to meet.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		 \multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system shows directions to the desired location.\\
        		 \hline
@@ -955,20 +983,23 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
         		7.	The user views their rewards for goals met. & \\
        		 \hline
-        		Postconditions: The system database is altered. & \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered. } \\
         		\hline
         \end{tabular} 
+        
+     \newpage
      
-
-		
-        		\centering
-					\textbf{UC14: Create Read Update and Delete(CRUD) Events and Activities}\\
+				\vspace{5mm}
+                \begin{flushleft}
+				\textbf{UC14: Create Read Update and Delete(CRUD) Events and Activities}\\
+                \end{flushleft}
+        		\centering	
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The administrator or agent has logged in to the application database and has searched for a location to place an event or activity.& \\
+       		 \multicolumn{2}{c}{Preconditions: The administrator or agent has logged in to the application database and has searched for a location to place an event or activity.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 & 0.	The system shows different venues.\\
        		 \hline
@@ -988,20 +1019,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		3.	TUCEW the administrator viewing changes to events/activities.&\\
        		 \hline
-        		Postconditions: The system database is altered. & \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered.}  \\
         		\hline
         \end{tabular} 
    
-
-
-        		\centering
-					\textbf{UC15:Set goals and Rewards}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC15:Set goals and Rewards}\\
+                \end{flushleft}
+        		\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The administrator has logged in to the application database and activity other information has been inserted.& \\
+       		\multicolumn{2}{c}{ Preconditions: The administrator has logged in to the application database and activity other information has been inserted.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 &0.	The system shows a rewards interface.\\
        		 \hline
@@ -1011,20 +1043,21 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		3.	TUCEW administrator reviews the progress report from the system and the appropriate reward is awarded to the user.&\\
        		 \hline
-        		Postconditions: The system database is altered. & \\
+        		\multicolumn{2}{c}{Postconditions: The system database is altered. } \\
         		\hline
         \end{tabular} 
       
-
-		
-        		\centering
-					\textbf{UC16: Login}\\
+				\vspace{5mm}
+                \begin{flushleft}
+                \textbf{UC16: Login}\\
+				\end{flushleft}
+        		\centering		
        		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: None.& \\
+       		 \multicolumn{2}{c}{Preconditions: None.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 &0.	The system shows a login interface.\\
        		 \hline
@@ -1034,19 +1067,20 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         		\hline
        		3.	TUCEW user, admin and agent logs in and view the main menu.&\\
        		 \hline
-        		Postconditions: The system is notified that a user, admin or agent has logged in. & \\
+        		\multicolumn{2}{c}{Postconditions: The system is notified that a user, admin or agent has logged in. } \\
         		\hline
         \end{tabular} 
         
-	
+				\vspace{5mm}
+                \textbf{UC17: Create Read Update and Delete(CRUD) User Account}\\
+                \vspace{3mm}
         		\centering
-					\textbf{UC17: Create Read Update and Delete(CRUD) User Account}\\
-       		 \small
+      		 \small
        		 \begin{tabular}{|p{8cm}|p{8cm}|}
        		 \hline
-       		 Preconditions: The administrator, user and agent has logged in to the application database.& \\
+       		\multicolumn{2}{c}{ Preconditions: The administrator, user and agent has logged in to the application database.} \\
        		 \hline
-       		 Actor: User & System: NavUP \\
+       		\multicolumn{1}{c}{Actor: User} & \multicolumn{1}{c}{ System: NavUP} \\
         		\hline
        		 &0.	The system shows a profile interface.\\
        		 \hline
@@ -1069,9 +1103,11 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 \\b)	Gets logged out.
 &\\
        		 \hline
-        		Postconditions: The administrator, user of agent is logged out or deleted from the system, and the system database is altered. & \\
+        		\multicolumn{2}{c}{Postconditions: The administrator, user of agent is logged out or deleted from the system, and the system database is altered. } \\
         		\hline
         \end{tabular} 
+        \endgroup
+        
     	\subsection{Traceability Matrix}
         \begin{table}[h!]
         \centering
