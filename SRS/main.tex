@@ -43,6 +43,21 @@
             \hline
             Heat Maps & Graphical representation of data in the form of colours on a map.
             \\
+				  \hline
+            UC & Use Case
+            \\
+ 				\hline
+            TUCBW & This Use Case Begins With
+            \\
+			   \hline
+            TUCEW & This Use Case Ends With
+            \\
+ 				\hline
+            TUCCW & This Use Case Continues With
+            \\
+				 \hline
+            ETA & Estimated Time of Arrival
+            \\
             \hline
             \end{tabular}
         \end{table}
@@ -148,6 +163,9 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
 			
 		\end{itemize}
     \subsection{Functional Requirements}
+    	
+    	\subsection{Requirement 1}
+    	\subsubsection{Description}
     This section includes the requirements that specify all the fundamental actions of the software system. The requirements are separated into modules that are cohesive with low coupling.
     
     
@@ -163,8 +181,14 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R1.3 NavUP shall allow the user to save their current location.
         \item R1.4 NavUP shall allow the user to share their location on the NavUP server, for other users to find them.
         \end{itemize}
+
+        \subsubsection{Use case diagram}
+        \subsection{Requirement 2}
+        \subsubsection{Description}
+
         \subsubsection{Requirement 2}
         \subsubsection*{Description}
+
         NavUP shall provide the user with a user interface to allow users to enter information
         \begin{itemize}
         \item R2.1 NavUP will allow user to enter information such as their desired location, places of interests and their personal details.
@@ -172,6 +196,9 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R2.3 The NavUP UI will allow users to check-in at specific locations.
         \item R2.4 The NavUP will have a find me functionality on the UI.
         \end{itemize}
+        \subsubsection{Use case diagram}
+        \subsection{Requirement 3}
+        \subsubsection{Description}
         \subsubsection{Requirement 3}
         \subsubsection*{Description}
         NavUP shall push new information to the users according to their preference
@@ -181,6 +208,477 @@ Thereafter, any relevant appendixes and indexes needed by this document will be 
         \item R3.1.1 NavUP will use the records of checked-in locations to guess the places that the user likes and suggest similar places. 
         \end{itemize}
         \end{itemize}
+        \subsubsection{Use case diagram}
+        \pagebreak
+        \subsection{Requirement 4}
+        \subsubsection{Description}
+        NavUP shall keep record of steps taken by the user around campus.
+        \subsubsection{Use case diagram}
+        
+        \subsection{Actor-System Interaction Models}
+			
+			
+        		\centering
+					\textbf{UC1: Get Current Location}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user is logged on to the NavUP system.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		  & 0.	The system displays the main menu options.\\
+       		 \hline
+       		 0.	TUCBW user chooses the "Current Location" menu option. & 2.	The system displays a Current Location menu.\\
+        		\hline
+       		3.	The user chooses the "Display my Location" option on the Current Location menu. & 4.	The system searches for (and displays) the user's current location.\\
+        		\hline
+       		5.	TUVEW the user views their current location. & \\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+     
+
+			
+        		\centering
+					\textbf{UC2: Search for Location}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system displays three options whereby to search for a location.\\
+       		 \hline
+       		 1.	TUCBW user chooses to search the location by 
+
+						a)	ETA.
+						b)	Disability.
+						c)	Pedestrian traffic.
+ 				& 2.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option (a-c) chosen.\\
+        		\hline
+       		 3.	The user selects the desired location. & 4.	The system\\ returns the location and gives user option to navigate to the location.\\
+        		\hline
+       		 5.	TUCEW user chooses to navigate to desired location. & \\
+       		 \hline
+        		Postconditions: The system loads directions from the database.& \\
+        		\hline
+        \end{tabular} 
+
+		
+        		\centering
+					\textbf{UC3: Get Directions of Location}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user is logged on to the NavUP system and has accessed the "Search Location" menu option.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system displays three options whereby to search for a location.\\
+       		 \hline
+       		 1.	TUCBW user chooses to search the location by 
+
+						\\a)	ETA.
+						\\b)	Disability.
+						\\c)	Pedestrian traffic.
+ & 2.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option (a-c) chosen. \\
+        		\hline
+       		 3.	The user selects the desired location. & 4.	The system presents optimal routes to the location. \\
+        		\hline
+       		 5.	The user chooses the route to follow. & 6.	The system provides the directions to the location (and asks the user if they want to save the location, TUCCW Save Location).\\
+        		\hline
+        		7.	TUCEW user following the directions to the desired location. & \\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+        
+
+		
+        		\centering
+					\textbf{UC4: Filter Directions by User Preference}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The User has already logged into the application and has accessed the search location menu option. Visitors need not login but\\ functionality will be restricted.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system displays options whereby to search for a location.\\
+       		 \hline
+       		 1.	TUCBW user chooses to search the location by \\
+
+						\\a)	ETA.
+						\\b)	Disability.
+						\\c)	Pedestrian traffic.
+ 				& 2.	The system updates the directions based on:\\
+
+						\\a)	The fastest route.
+						\\b)	A route suitable for users with a disability.
+						\\c)	A route with minimal of maximal pedestrian traffic.
+\\
+        		\hline
+       		 	3.	TUCEW the user to navigating to desired location. &\\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+     
+
+		
+        		\centering
+					\textbf{UC5: Get Estimated Time of Arrival (ETA)}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has searched for a location to navigate to.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		  & 0.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option chosen.\\
+       		 \hline
+       		 1.	The user selects the desired location. & 2.	The system calculates general and optimal routes, TUCCW Get Pedestrian Traffic.\\
+        		\hline
+       		 3.	The user chooses a route. & 4.	The system calculates the ETA to the desired venue (and displays directions to the desired location).\\
+        		\hline
+       		 5.	TUCEW user views and follows the directions. & \\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+        
+
+		
+        		\centering
+					\textbf{UC6: Save Location}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions:Before the use case can be initiated, the User has already searched for the desired location to save.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system provides the directions to the location (and asks the user if they want to save the location, TUCCW Save Location).\\
+       		 \hline
+       		 1.	TUCBW user choosing to:
+
+						a)	Save the location.
+						b)	Not save the location.
+ 				& 2.	The system (updates the database and) starts shows directions \\to the location.
+
+\\a) Updates the database by adding the location.
+\\b) Leaves the database as is.
+\\
+        		\hline
+       		 3.	TUCEW user following the directions to the desired location. &\\
+       		 \hline
+        		Postconditions: The system database is altered. \\
+        		\hline
+        \end{tabular} 
+       
+
+		
+        		\centering
+					\textbf{UC7: Create Read Update and Delete(CRUD) Venue Information}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The admin or user, depending on the case, has logged in to the application database.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system shows different venues.\\
+       		 \hline
+       		 1.	TUCBWThe user queries the database for the desired venue.\\
+ 				&2.	The system returns the results from the query.\\
+        		\hline
+       		 3.	The administrator selects from the results to perform a R.A.D operation. & 4.	The system updates the database after the changes have been made.\\
+				\hline
+					5.	TUCEW user views the different venues.&\\
+       		 \hline
+        		Postconditions: The system database is altered. \\
+        		\hline
+        \end{tabular} 
+       
+
+				
+        		\centering
+					\textbf{UC8: Create Read Update and Delete(CRUD) Venue Information}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The admin or user, depending on the case, has logged in to the application database.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system shows different points of interest.\\
+       		 \hline
+       		4.	TUCBW administrator/user decides to:\\
+
+\\e)	Create a point of interest.
+\\f)	Read a point of interest.
+\\g)	Update a point of interest.
+\\1.	Delete a point of interest.
+
+ 				&2.	2.	The system:\\
+
+\\a)	Updates a point of interest (by inserting the event/activity into the \\database).
+\\b)	Fetches a point of interest from the database for viewing.
+\\c)	Updates information in the database about a point of interest.
+\\d)	Deletes an point of interest from the database.
+\\
+        		\hline
+       		 	3.	TUCEW the administrator/user viewing changes to events/activities. &\\
+       		 \hline
+        		Postconditions: The system database is altered. \\
+        		\hline
+        \end{tabular} 
+       
+		
+        		\centering
+					\textbf{UC9: View Information on Locations}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has searched for the desired location to obtain more information about the location.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		& 0.	The system searches for a location, TUCCW Search Location.\\
+       		 \hline
+       		 1.	TUCBW user choosing to view more information about a location.\\  & 2.	The system fetches the necessary information from the database, and display it.\\
+        		\hline
+       		 3.	TUCEW user viewing information on locations. &\\
+       		 \hline
+        		Postconditions: None. & \\
+        		\hline
+        \end{tabular} 
+      
+
+		
+        		\centering
+					\textbf{UC10: View Points of Interest}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has provided the application with information about their interests.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system displays a list of points of interests based on the user's criteria.\\
+       		 \hline
+       		 1.	TUCBW user selects a point of interest. & 2.	The system (fetches information from the database and) displays information about that venue (and displays directions to that venue).\\
+        		\hline
+       		 3.	TUCEW user views the information and directions. &\\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+      
+
+		
+        		\centering
+					\textbf{UC11: Get Pedestrian Traffic}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has searched for a location to navigate to.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		  & 0.	The system searches, TUCCW Search for Location, for (and displays) the location choices to the user based on the option chosen.\\
+       		 \hline
+       		 1.	The user selects the desired location. & 2.	The system returns general pedestrian traffic for the selected route, and an optimal route with less pedestrian traffic.\\
+        		\hline
+       		 3.	The user chooses a route. & 4.	The system displaysdirections following the chosen route to the desired location.\\
+        		\hline
+       		 5.	The user chooses:\\
+
+						\\a)	General route.
+					\\	b)	Optimal route.
+			 & 6.	The system displays directions for:\\
+
+					\\a)	The general route to the user's desired location.
+					\\b)	The optimal route to the user's desired location.
+ \\
+        		\hline
+        		7.	The user views and follows the directions to their desired location. & \\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+     
+
+		
+        		\centering
+					\textbf{UC12: Sharing Location}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has obtained their current location.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		  & 0.	The system displays the user's current location, TUCCW Get Current Location.\\
+       		 \hline
+       		 1.	TUCBW user selects to share their location with anyone who has access to the application. & 2.	The system generates a pin and allows the user to share their location (and displays a confirmation message).\\
+        		\hline
+       		3.	TUCEW user acknowledging the confirmation message. &\\
+       		 \hline
+        		Postconditions: None.& \\
+        		\hline
+        \end{tabular} 
+       
+
+		
+
+	
+        		\centering
+					\textbf{UC13: Calculating Rewards}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The user has logged into the application and selected a goal to meet.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system shows directions to the desired location.\\
+       		 \hline
+       		 1.	The user views and follows the directions provided. & 2.	The system calculates the steps the user takes (and updates the database).\\
+        		\hline
+       		 3.	The user keeps walking until a goal is met. & 4.	The system sums up steps for a period, and sends updates to the user.\\
+        		\hline
+       		 5.	The user receives updates. & 6.	The system determines if goals are met, and notifies the user of rewards (and updates the system database).\\
+        		\hline
+        		7.	The user views their rewards for goals met. & \\
+       		 \hline
+        		Postconditions: The system database is altered. & \\
+        		\hline
+        \end{tabular} 
+     
+
+		
+        		\centering
+					\textbf{UC14: Create Read Update and Delete(CRUD) Events and Activities}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The administrator or agent has logged in to the application database and has searched for a location to place an event or activity.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 & 0.	The system shows different venues.\\
+       		 \hline
+       		1.	TUCBW administrator decides to:\\
+
+\\a)	Create an event/activity.
+\\b)	Read an event/activity.
+\\c)	Update an event/activity.
+\\d)	Delete an event/activity.
+ &2.	The system:
+
+\\a)	Updates an event/activity (by inserting the event/activity into the \\database).
+\\b)	Fetches an event/activity from the database for viewing.
+\\c)	Updates information in the database about an event/activity.
+\\d)	Deletes an event/activity from the database.
+\\
+        		\hline
+       		3.	TUCEW the administrator viewing changes to events/activities.&\\
+       		 \hline
+        		Postconditions: The system database is altered. & \\
+        		\hline
+        \end{tabular} 
+   
+
+
+        		\centering
+					\textbf{UC15:Set goals and Rewards}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The administrator has logged in to the application database and activity other information has been inserted.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 &0.	The system shows a rewards interface.\\
+       		 \hline
+       		1.	TUCBW administrator sets goals for users to match to in order to receive a reward.
+ &2.	The system adds the goal to the database , and tracks the user progress through the period the goal has been set, TUCCW Calculating Rewards.
+\\
+        		\hline
+       		3.	TUCEW administrator reviews the progress report from the system and the appropriate reward is awarded to the user.&\\
+       		 \hline
+        		Postconditions: The system database is altered. & \\
+        		\hline
+        \end{tabular} 
+      
+
+		
+        		\centering
+					\textbf{UC16: Login}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: None.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 &0.	The system shows a login interface.\\
+       		 \hline
+       		1.	TUCBW user, admin and agent inputs the required credentials.\\
+ &2.	The system validates the credentials (by fetching the necessary information from the system database),and logs the user, admin or agent in if valid.
+\\
+        		\hline
+       		3.	TUCEW user, admin and agent logs in and view the main menu.&\\
+       		 \hline
+        		Postconditions: The system is notified that a user, admin or agent has logged in. & \\
+        		\hline
+        \end{tabular} 
+        
+	
+        		\centering
+					\textbf{UC17: Create Read Update and Delete(CRUD) User Account}\\
+       		 \small
+       		 \begin{tabular}{|p{8cm}|p{8cm}|}
+       		 \hline
+       		 Preconditions: The administrator, user and agent has logged in to the application database.& \\
+       		 \hline
+       		 Actor: User & System: NavUP \\
+        		\hline
+       		 &0.	The system shows a profile interface.\\
+       		 \hline
+       		1.	TUCBW the user, admin or agent performing CRUD actions for their account such as:\\
+
+\\a)	Read.
+\\b)	Update.
+\\c)	Delete.
+ & 2.	The system changes the database based on the CRUD action:
+
+\\a)	The system fetches the user information form the database for viewing.
+\\b)	The system updates the user information in the database.
+\\c)	The system deletes the user from the system database and logs them out.
+
+\\
+        		\hline
+       		3.	TUCEW user, admin and agent:
+
+\\a)	Viewing their profile.
+\\b)	Gets logged out.
+&\\
+       		 \hline
+        		Postconditions: The administrator, user of agent is logged out or deleted from the system, and the system database is altered. & \\
+        		\hline
+        \end{tabular} 
+        
+
+    	\subsection{Traceability Matrix}
+        \begin{table}[h!]
+		\caption{Traceability Matrix}
+					  \label{tab:Table 1: }
+=======
         \pagebreak
         \subsubsection{Requirement 4}
         \subsubsection*{Description}
